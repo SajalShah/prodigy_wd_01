@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #3498db; /* Initial background color */
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        .navigation a {
+            color: #fff; /* Initial font color */
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background: #fff;
+            color: #3498db;
+        }
+
+        section {
+            height: 500px; /* Adjust as needed */
+            margin-top: 60px; /* Ensure content is below the fixed navigation */
+        }
+    </style>
+</head>
+<body>
+
+<div class="navigation">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
+
+<section>
+    <!-- Content goes here -->
+    <h1>Welcome to Your Website</h1>
+</section>
+
+<script>
+    // Add a scroll event listener to change the background color when scrolling
+    window.addEventListener('scroll', function () {
+        var navigation = document.querySelector('.navigation');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+            navigation.style.background = '#1abc9c'; /* Change background color on scroll */
+        } else {
+            navigation.style.background = '#3498db'; /* Reset to initial color */
+        }
+    });
+</script>
+
+</body>
+</html>
